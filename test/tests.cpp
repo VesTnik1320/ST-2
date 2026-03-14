@@ -177,7 +177,7 @@ TEST(CircleTest, PrecisionTest) {
 // Тесты для ropeGap
 TEST(RopeGapTest, EarthRadius) {
   double earth_radius_km = 6371.0;
-  ouble gap = ropeGap(earth_radius_km);
+  double gap = ropeGap(earth_radius_km);
   double expected_gap = 1.0 / (2 * PI);
   EXPECT_NEAR(gap, expected_gap, EPS);
 }
