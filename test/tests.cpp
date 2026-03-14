@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include <cstdint>
-#include <cmath>  // для std::isnan, std::sqrt
+#include <cmath>
 #include "circle.h"
 #include "tasks.h"
 
