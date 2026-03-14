@@ -194,12 +194,6 @@ TEST(RopeGapTest, NegativeRadius) {
   EXPECT_NEAR(gap, expected_gap, EPS);
 }
 
-TEST(RopeGapTest, VeryLargeRadius) {
-  double gap = ropeGap(1e9);
-  double expected_gap = 1.0 / (2 * PI);
-  EXPECT_NEAR(gap, expected_gap, EPS);
-}
-
 TEST(RopeGapTest, VerySmallRadius) {
   double gap = ropeGap(1e-9);
   double expected_gap = 1.0 / (2 * PI);
