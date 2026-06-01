@@ -25,8 +25,7 @@ void Circle::setArea(double a) {
     if (area < 0.0) {
         radius = std::nan("");
         ference = std::nan("");
-    }
-    else {
+    } else {
         radius = std::sqrt(area / PI);
         ference = 2.0 * PI * radius;
     }
