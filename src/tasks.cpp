@@ -1,7 +1,7 @@
 // Copyright 2025 UNN-CS
 #include "tasks.h"
-#include "circle.h"
 #include <cmath>
+#include "circle.h"
 
 const double PI = 3.1415;
 
@@ -19,7 +19,7 @@ double ropeGap(double earth_radius_km) {
 }
 
 double poolConcreteCost(double pool_radius_m, double walkway_width_m,
-    double concrete_price_per_m2) {
+                        double concrete_price_per_m2) {
     Circle inner(pool_radius_m);
     Circle outer(pool_radius_m + walkway_width_m);
 
@@ -28,13 +28,16 @@ double poolConcreteCost(double pool_radius_m, double walkway_width_m,
 }
 
 double poolFenceCost(double pool_radius_m, double walkway_width_m,
-    double fence_price_per_m) {
+                     double fence_price_per_m) {
     Circle outer(pool_radius_m + walkway_width_m);
     return outer.getFerence() * fence_price_per_m;
 }
 
 double poolTotalCost(double pool_radius_m, double walkway_width_m,
-    double concrete_price_per_m2, double fence_price_per_m) {
-    return poolConcreteCost(pool_radius_m, walkway_width_m, concrete_price_per_m2)
-        + poolFenceCost(pool_radius_m, walkway_width_m, fence_price_per_m);
+                     double concrete_price_per_m2, double fence_price_per_m) {
+    double concrete = poolConcreteCost(pool_radius_m, walkway_width_m,
+                                       concrete_price_per_m2);
+    double fence = poolFenceCost(pool_radius_m, walkway_width_m,
+                                 fence_price_per_m);
+    return concrete + fence;
 }
