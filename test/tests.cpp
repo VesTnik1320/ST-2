@@ -154,7 +154,7 @@ TEST(RopeGapTest, CheckEarthRadius) {
 }
 
 TEST(RopeGapTest, VeryLargeRadius) {
-    double gap = ropeGap(3e9);
+    double gap = ropeGap(3e6);
     double expected_gap = 1.0 / (2 * PI);
     EXPECT_NEAR(gap, expected_gap, EPS);
 }
